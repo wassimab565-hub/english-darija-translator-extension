@@ -192,8 +192,6 @@ Future upgrades (next arcs):
 * Text-to-Speech
 * Deploy backend on cloud (Docker / VPS)
 
-That’s basically going from Genin to Hokage.
-
 ---
 
 ## Author
