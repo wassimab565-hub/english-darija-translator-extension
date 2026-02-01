@@ -51,6 +51,8 @@ english-darija-translator-extension/
 │   ├── style.css
 │   └── content.js
 │
+├── TEST-Screenshots
+│
 └── README.md
 ```
 
