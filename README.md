@@ -89,8 +89,6 @@ The backend sends a structured prompt to the model and receives:
 
 This makes the system flexible and easily extendable to other languages.
 
-Working theory: the LLM is basically a very fast multilingual jinn trapped in a server.
-
 ---
 
 ## Security – Basic Authentication
