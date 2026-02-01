@@ -155,6 +155,12 @@ Test scenarios:
 
 ## Technologies Used
 
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![JAX-RS](https://img.shields.io/badge/JAX--RS-007396?style=for-the-badge)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Chrome Extension](https://img.shields.io/badge/Chrome_Extension-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)
+
 * Java / Jakarta EE / JAX-RS
 * Large Language Model API (Gemini)
 * PHP
