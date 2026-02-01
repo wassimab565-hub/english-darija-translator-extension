@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darija Pro Translator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+</head>
+<body>
+
+    <div class="brand-strip"></div>
+
+    <div class="app-container">
+        
+        <header>
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L14.5 9.5H22L16 14.5L18.5 22L12 17.5L5.5 22L8 14.5L2 9.5H9.5L12 2Z" fill="var(--secondary)"/>
+                    </svg>
+                </div>
+                <h1>Darija<span class="highlight">Translator</span></h1>
+            </div>
+            <button id="themeBtn" class="icon-btn theme-btn" title="Toggle Dark Mode">
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                <svg class="sun-icon hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </button>
+        </header>
+
+        <div class="lang-controls">
+            <span class="lang-label" id="lblSource">English</span>
+            <button id="swapBtn" class="swap-btn" title="Swap Languages">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16V4M7 4L3 8M7 4L11 8M17 8V20M17 20L21 16M17 20L13 16"/></svg>
+            </button>
+            <span class="lang-label active" id="lblTarget">Darija</span>
+        </div>
+
+        <div class="card input-card">
+            <div class="textarea-container">
+                <textarea id="sourceText" placeholder="Enter text here..."></textarea>
+                <button id="clearBtn" class="clear-btn hidden" title="Clear text">×</button>
+            </div>
+
+            <div class="card-footer">
+                <div class="tools-left">
+
+                    <!--Voice Input -->
+                    <button id="micBtn" class="tool-btn" title="Voice Input">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                            <line x1="12" y1="19" x2="12" y2="23"></line>
+                            <line x1="8" y1="23" x2="16" y2="23"></line>
+                        </svg>
+                    </button>
+
+                    <!--Voice to Voice -->
+                    <button id="voiceToVoiceBtn" class="tool-btn" title="Conversation mode">
+                        <svg width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+
+                            <!-- left speech bubble -->
+                            <path d="M3 5h10v7H8l-3 3z"/>
+
+                            <!-- right speech bubble -->
+                            <path d="M21 19H11v-7h5l3-3z"/>
+                        </svg>
+                    </button>
+
+
+
+
+                    <span id="charCount" class="char-count">0/500</span>
+                </div>
+
+                <div class="tools-right">
+                    <button id="translateBtn" class="action-btn">
+                        Translate
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="card output-card">
+            <div class="loading-overlay hidden" id="loader">
+                <div class="spinner"></div>
+            </div>
+            
+            <div class="output-content" id="resultText">
+                <span class="placeholder">Translation will appear here...</span>
+            </div>
+
+            <div class="card-footer">
+                <div class="tools-left">
+                     <span class="ai-badge">AI Model</span>
+                </div>
+                <div class="tools-right">
+                    <button id="speakBtn" class="tool-btn" title="Listen">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                    </button>
+                    <button id="copyBtn" class="tool-btn" title="Copy Translation">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="toast" class="toast hidden">Copied to clipboard!</div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
