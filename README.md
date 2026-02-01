@@ -27,8 +27,6 @@ This project aims to:
   * A browser extension (Chrome)
 * Integrate a **Large Language Model (LLM)** for NLP tasks
 
-Each part is a new skill unlocked. Backend mastery? That’s your first **Rasengan**.
-
 ---
 
 ## Project Structure
@@ -135,8 +133,6 @@ Main features:
 * Translation direction toggle (English ↔ Darija)
 * REST API calls with authentication
 * Automatically copies selected text from the active page
-
-In shinobi terms: instant translation no hand signs required.
 
 ---
 
